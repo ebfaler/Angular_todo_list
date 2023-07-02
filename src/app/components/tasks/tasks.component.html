@@ -1,0 +1,10 @@
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<!-- 
+looping over the tasks and passing in a prop of task -->
+<app-task-item *ngFor="let task of tasks" [task]="task" (onDeleteTask)="deleteTask(task)"
+    (onToggleReminder)="toggleReminder(task)">
+</app-task-item>
+
+
+<!-- when onDeleteTask is fired, we can call a function called deleteTask -->
+<!-- when onAddTask is recived, the addTask method will be executed -->
